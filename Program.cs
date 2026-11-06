@@ -72,6 +72,7 @@ try
         Report("State", chosen == wanted.Text, $"selected '{chosen}'");
     }
     catch (Exception e) { Report("State", false, e.Message); }
+    if (!opt.Headless) Thread.Sleep(2500);
 }
 catch (Exception e) { Console.WriteLine("Fatal: " + e.Message); failures++; }
 
