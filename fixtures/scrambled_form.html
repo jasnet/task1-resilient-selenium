@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice Form - Scrambled Layout</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .box { margin-bottom: 20px; border: 1px solid #ccc; padding: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Scrambled Form (Tests Semantic Resilience)</h2>
+
+  <!-- State comes first -->
+  <div class="box">
+    <span>Choose your State / Province:</span>
+    <select name="region_dropdown_random_id_9823">
+      <option value="none">-- Choose Region --</option>
+      <option value="1">Goa</option>
+      <option value="2">Delhi</option>
+      <option value="3">Karnataka</option>
+    </select>
+  </div>
+
+  <!-- Look-alike traps -->
+  <div class="box">
+    <label>Last Name</label>
+    <input type="text" name="family_name_xyz" placeholder="Family name">
+    <label>Middle Name</label>
+    <input type="text" name="mid_xyz" placeholder="Middle name">
+  </div>
+
+  <!-- Gender with parent legend and text node after radio -->
+  <fieldset class="box">
+    <legend>Gender Details</legend>
+    <input type="radio" name="random_radio_grp_44" value="M"> Male &nbsp;&nbsp;
+    <input type="radio" name="random_radio_grp_44" value="F"> Female
+  </fieldset>
+
+  <!-- First Name has no <label for>, only aria-label and placeholder -->
+  <div class="box">
+    <div>Given Name:</div>
+    <input type="text" aria-label="First Name" placeholder="First Name" name="rnd_input_882">
+  </div>
+</body>
+</html>
