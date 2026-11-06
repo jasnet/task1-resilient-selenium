@@ -65,7 +65,7 @@ try
         if (real.Count == 0) throw new Exception("dropdown has no selectable options");
         var wanted = opt.State != null
             ? real.FirstOrDefault(o => SemanticFinder.Norm(o.Text) == SemanticFinder.Norm(opt.State))
-              ?? throw new Exception($"option '{opt.State}' not in dropdown")
+              ?? throw new Exception($"option '{opt.State}' not in dropdown (available: {string.Join(", ", real.Take(5).Select(o => o.Text))})")
             : real[0];
         sel.SelectByText(wanted.Text);
         var chosen = sel.SelectedOption.Text;
